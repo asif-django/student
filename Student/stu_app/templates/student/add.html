@@ -1,0 +1,18 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value=""><br><br>
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age" value=""><br><br>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" value=""><br><br>
+    <label for="nationality">Nationality</label>
+    <input type="text" name="nationality" id="nationality" value=""><br><br>
+    <label for="photo">Photo</label>
+    <input type="file" name="Photo" id="photo" value=""><br><br>
+
+    <input type="submit" value="SUBMIT">
+</form>
+<br><br>
+<a href="{% url 'view' %}">Student View</a>
+

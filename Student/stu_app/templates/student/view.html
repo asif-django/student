@@ -1,0 +1,33 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align:center;
+}
+</style>
+<table style="width:30%">
+    <thead >
+    <tr>
+        <th>
+            STUDENT_NAMES
+        </th>
+        <th>
+            ACTION
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for form in stu_data %}
+    <tr>
+        <td>
+            {{ form.name }}
+        </td>
+        <td>
+            <a href="{% url 'detail' form.id %}"> View</a>&nbsp&nbsp
+            <a href="{% url 'delete' form.id %}"> Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table><br><br>
+<a href="{% url 'add' %}">ADD STUDENT</a><br><br>

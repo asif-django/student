@@ -1,0 +1,29 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align:center;
+}
+</style>
+<table style="width:60%">
+    <thead>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>EMAIL</th>
+    <th>NATIONALITY</th>
+    <th>PHOTO</th>
+    </thead>
+    <tbody>
+    {% for form in stu_info %}
+    <tr>
+        <td>{{ form.name }}</td>
+        <td>{{ form.age }}</td>
+        <td>{{ form.email }}</td>
+        <td>{{ form.nationality }}</td>
+        <td style="width:50px; height:50px" ><img src="{{ form.photo.url }}"></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<a href="{% url 'view' %}">Student View</a>
