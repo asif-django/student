@@ -1,3 +1,11 @@
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="name">Name</label>
@@ -9,10 +17,10 @@
     <label for="nationality">Nationality</label>
     <input type="text" name="nationality" id="nationality" value=""><br><br>
     <label for="photo">Photo</label>
-    <input type="file" name="Photo" id="photo" value=""><br><br>
+    <input type="file" name="photo" id="photo" value=""><br><br>
 
     <input type="submit" value="SUBMIT">
 </form>
-<br><br>
-<a href="{% url 'view' %}">Student View</a>
+
+<a href="{% url 'view' %}">Student List</a>
 
